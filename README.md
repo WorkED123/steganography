@@ -1,68 +1,64 @@
-<h1> Lesson 2.5: Network Troubleshooting  </h1>
+<h1> Lesson 4.3: Steganography  </h1>
 <h2> Summary</h2>
 
-<p1>By the end of this module, learners should be able to describe the essential components of a network, including devices (routers, switches, hubs, etc.), topologies, and common protocols. This foundational knowledge will serve as the basis for identifying where potential issues arise.</p1>
+<p1>In this lesson students will learn what steganography is, the techniques of hiding data using Steganography, and will understand how steganography is used in cyber security.</p1>
 <br>
 
 <h2>Learning Objectives</h2>
 <ul>
-<li>Recognize Common Network Issues and Their Solutions.</li>
+<li>Students will elucidate the concept of steganography, its historical significance, and its distinction from cryptography.</li>
   <br>
-<li>Develop a Systematic Troubleshooting Methodology.</li><br>
+<li>Students will explore and gain proficiency in various steganographic techniques including image, audio, text, and network steganography, understanding the methodologies to conceal data within different types of carrier files.</li><br>
 
-<li>Implement Preventative Measures and Best Practices.</li><br>
+<li>Students will unravel the applications of steganography in cybersecurity, understanding its utility in covert communication as well as its potential malicious usages.</li><br>
+
+<li>Students will delve into basic steganalysis techniques, gaining an introductory understanding of how hidden data can be detected and potentially extracted.</li><br>
   
-<li>Become proficient in using a variety of network diagnostic tools such as ping, traceroute, netstat, Wireshark, and others.</li>
+<li>Students will apply steganographic techniques to hide and retrieve data, and engage in basic steganalysis exercises to detect steganographic content, understanding the practical challenges and limitations inherent in steganography and steganalysis.</li>
 
 </ul>
 
 <h2>Vocabulary and Acronyms</h2>
 
-<ul>
-<li>
+<ul><li>
 
-  **Ping**</li>
-  
-<li>
-
-**Wireshark**</li>
+**Steganography**</li>
   
 <li>
   
-**Traceroute**</li>
+**Steganalysis**</li>
 
 <li>
 
-**Methodology**</li>
+**Carrier File**</li>
   
 <li>
   
-**Netstat**</li>
+**Payload**</li>
 
 <li>
   
-**OSI Model**</li>
+**LSB - Least Significant Bit**</li>
+
+<li>
+  
+**Cryptanalysis**</li>
+
+<li>
+
+**Histogram Analysis**</li>
+  
+<li>
+  
+**Digital Watermarking**</li>
+
+<li>
+  
+**Counter-Steganography**</li>
 
 </ul>
 
-<h2>NICE Framework KSAs</h2>
-<ul>
-<li>K0001 - Knowledge of computer networking concepts, protocols, and network security methodologies.</li>
-<br>
-<li>K0010 - Knowledge of communication methods, principles, and ideas that support the network infrastructure.</li>
-<br>
-<li>K0011 - Knowledge of capabilities and applications of network equipmentK0029	Knowledge of the organization's Local and Wide Area Network connections.</li>
-<br>
-<li>K0034 - Knowledge of network services and protocol interactions that provide network communications.</li>
-<br>
-<li>K0057 - Knowledge of network hardware devices and functions.</li>
-<br>
-<li>K0061 - Knowledge of how traffic flows across the network</li>
-<br>
-<li>K0111 - Knowledge of network tools</li>
-<br>
-<li>K0113 - Knowledge of different types of network communication</li>
-</ul>
+
 
 
 <h2>Lesson Prerequisites</h2>
@@ -71,137 +67,170 @@
 
 
 <h2>Introduction</h2>
-Today, we'll delve deep into the world of network troubleshooting. As our reliance on networks grows, so does ensuring they run smoothly. Whether you're a budding IT professional or just curious about how networks function, today's lecture will equip you with the knowledge and skills to approach network issues methodically.
+In this captivating lesson, students will traverse the clandestine path of steganography, the art and science of hiding messages or data within other data. We will delve into a variety of techniques to conceal data, explore the role of steganography in cybersecurity, and engage in hands-on exercises to experience the stealth and subtlety of steganographic practices.
 
-<h2>Understanding Network Fundamentals and Architecture</h2>
 
-Before we can fix a problem, we need to understand the system. Every network, regardless of its size or complexity, is built upon foundational components:
 
-Devices are tangible components like routers, switches, and hubs. Each plays a unique role in directing, transmitting, or amplifying data.
+<h2>Fundamental Understanding of Steganography</h2>
 
 <ul>
-	<li><h4><ins>Topologies:</ins></li></h4>
+	<li><h4><ins>Defining Steganography</ins></h4></li>
 	<ul>
-		<li>This refers to the physical or logical layout of a network. The structure can influence where and how issues arise, whether it's a star, ring, or mesh topology.</li>
+		<li>Students will learn the definition of steganography, distinguishing it from other forms of data hiding and encryption, and understanding its objective of concealing the existence of data.</li>
 	</ul>
-	<li><h4><ins>Protocols:</ins></li></h4>
+	<li><h4><ins>Historical Context</ins></h4></li>
 	<ul>
-		<li> These are the rules that govern data transmission. Familiar names like TCP/IP or HTTP dictate how data packets are sent, received, and interpreted.</li>
+		<li>Explore the historical roots of steganography, tracing back to ancient civilizations using hidden messages for secret communication. Discuss famous historical instances of steganography, showcasing its significance over time.</li>
+	</ul>
+	<li><h4><ins>Forms of Steganography</ins></h4></li>
+	<ul>
+		<li>Discover various forms steganography can take including physical steganography (like invisible ink or microdots) and digital steganography (like hiding data in images, audio, or text files).</li>
+	</ul>
+	<li><h4><ins>Steganography vs Cryptography</ins></h4></li>
+	<ul>
+		<li>Understand the primary distinctions between steganography and cryptography, emphasizing that while cryptography focuses on making data unreadable, steganography focuses on making data undetectable.</li>
+	</ul>
+	<li><h4><ins>Applications of Steganography</ins></h4></li>
+	<ul>
+		<li>Explore the wide range of applications for steganography, from covert military communication to modern digital watermarking for copyright protection.</li>
+	</ul>
+	<li><h4><ins>Carrier Files and Payload</ins></h4></li>
+	<ul>
+		<li>Learn about the terms 'carrier file' which is the file hosting the hidden data, and 'payload' which is the hidden data itself. Understand how the payload is embedded into the carrier file without arousing suspicion.</li>
+	</ul>
+	<li><h4><ins>Technical Principles</ins></h4></li>
+	<ul>
+		<li>Delve into the technical principles behind digital steganography, understanding the concept of redundant or least-significant data and how it can be manipulated to carry hidden information.</li>
 	</ul>
 </ul>
 
 
-<h2>Mastering Diagnostic Tools and Software</h2>
-Network professionals have tools like a doctor using a stethoscope or X-ray machine. Some of the most essential include:
+<h2>Techniques of Data Concealment</h2>
+
+Delve into a variety of steganographic techniques
 
 <ul>
-	<li><h4><ins>Ping:</ins></h4></li>
+	<li><h4><ins>Image Steganography</ins></h4></li>
 	<ul>
-		<li>Tests the reachability of a host and measures the roundtrip time for packets.
-		</li>
+		<li>Learn how data can be hidden within images, exploring techniques like Least Significant Bit (LSB) substitution.</li>
 	</ul>
-	<li><h4><ins>Traceroute:</ins></h4></li>
+	<li><h4><ins>Audio Steganography</ins></h4></li>
 	<ul>
-		<li>Displays the path that a packet takes to reach a destination. 
-		</li>
+		<li>Explore the realm of sound as we unveil how data can be tucked away in audio files.</li>
 	</ul>
-	<li><h4><ins>Netstat:</ins></h4></li>
+	<li><h4><ins>Text Steganography</ins></h4></li>
 	<ul>
-		<li>Provides network statistics and information about current network connections. 
-		</li>
+		<li>Discover the subtleties of hiding messages within text, utilizing techniques like white space steganography.</li>
 	</ul>
-	<li><h4><ins>Wireshark:</ins></h4></li>
+	<li><h4><ins>Network Steganography</ins></h4></li>
 	<ul>
-		<li>A packet analyzer that lets you see what's happening on your network at a microscopic level.
-		</li>
-	</ul>
-</ul>
-
-Each tool provides a unique lens to view the network; mastering them is crucial for effective troubleshooting.
-
-<h2>Systematic Troubleshooting Methodology</h2>
-
-When faced with a network issue, jumping in and making changes is tempting. However, a systematic approach is critical: <br>
-
-<ul>
-	<li>1. Identify Symptoms: Gather as much information as possible before anything else. </li>
-	<br>
-	<ul>
-		<li>Are certain users affected? </li><br>
-		<li>Is it a specific type of traffic or application?</li><br>
-	</ul>
-	<li>2. Isolate the Problem: Narrow down the cause. </li>
-	<br>
-	<ul>
-		<li>Is it a hardware failure? </li><br>
-		<li>A software glitch? </li><br>
-		<li>Or a misconfiguration?</li><br>
-	</ul>
-	<li>3. Implement Solutions: Once the root cause is identified, apply the necessary fix, whether replacing a faulty cable, updating software, or tweaking configurations.</li>
-</ul>
-
-
-<h2>Recognizing Common Network Issues</h2>
-
-Experience teaches us that specific issues crop up more frequently than others:
-
-<ul>
-	<li><h4><ins>IP Conflicts:</ins></h4></li>
-	<ul>
-		<li>When two devices on the same network are assigned the same IP address.</li>
-	</ul>
-	<li><h4><ins>DNS Issues: </ins></h4></li>
-	<ul>
-		<li>Problems resolving domain names to IP addresses can prevent websites from loading.  </li>
-	</ul>
-	<li><h4><ins>Connectivity Losses: </ins></h4></li>
-	<ul>
-		<li>This can be due to many reasons, from physical cable damages to router malfunctions. </li>
-	</ul>
-	<li><h4><ins>Slow Performance:</ins></h4></li>
-	<ul>
-		<li>Often due to bandwidth limitations, high network traffic, or even malware.  </li>
-	</ul>
-	<li><h4><ins>Security Breaches: </ins></h4></li>
-	<ul>
-		<li>Unauthorized access or attacks on the network.</li>
-	</ul>
-</ul>
-
-By recognizing the signs of these common issues, you can often predict and prevent them from escalating.
-
-
-<h2>Implementing Preventative Measures</h2>
-As the saying goes, "An ounce of prevention is worth a pound of cure." In the realm of networks:
-<ul>
-	<li><h4><ins>Regular Updates: </ins></h4></li>
-	<ul>
-		<li>Ensure all devices and software are up-to-date. This not only provides new features but often patches known vulnerabilities.</li>
-	</ul>
-	<li><h4><ins>Backups:</ins></h4></li>
-	<ul>
-		<li>Regularly back up configurations and critical data. In the event of a failure, this can drastically reduce recovery time.  </li>
-	</ul>
-	<li><h4><ins>Monitoring:</ins></h4></li>
-	<ul>
-		<li>Use tools to monitor network traffic, performance, and anomalies constantly. This proactive approach can alert you to issues before they become critical.</li>
+		<li>Understand how data can be concealed within network protocols and headers.</li>
 	</ul>
 </ul>
 
 
+<h2>Steganography in Cybersecurity</h2>
+Uncover the dual-edged sword of steganography in cybersecurity:
 
+<ul>
+	<li><h4><ins>Covert Communication</ins></h4></li>
+	<ul>
+		<li>Explore how steganography can be used for secure and covert communication, ensuring data confidentiality.</li>
+	</ul>
+	<li><h4><ins>Malicious Usage</ins></h4></li>
+	<ul>
+		<li> Understand how adversaries can leverage steganography for malicious purposes, like exfiltrating data or delivering malware payloads.</li>
+	</ul>
+</ul>
 
+<h2>Introduction to Steganalysis</h2>
+<ul>
+<li><h4><ins>Defining Steganalysis</ins></h4></li>
+	<ul>
+		<li>Students will learn the definition of steganalysis, the science of detecting and potentially extracting hidden data within carrier files without prior knowledge of the hiding techniques.</li>
+	</ul>
 
+	
+ 
+ 
+ 
+ 
+ 
+ <li><h4><ins>Methods of Steganalysis</ins></h4></li>
+ Delve into the common methods employed in steganalysis:
+	<ul><br>
+		<li><ins>Visual Analysis</ins></li>
+		<ul>
+			<li>Understanding how visual cues can sometimes reveal the presence of hidden data, especially in poorly executed steganographic techniques.
+			</li><br>
+		</ul>
+		<li><ins>Statistical Analysis</ins></li>
+		<ul>
+			<li>Explore how statistical anomalies within a carrier file can hint at the presence of steganography.
+			</li><br>
+		</ul>
+		<li><ins>Structural Analysis</ins></li>
+		<ul>
+			<li>Learn how alterations in the structural properties of a carrier file may reveal steganographic content.
+			</li>
+		</ul>
+	</ul>
+<li><h4><ins>Tools and Techniques</ins></h4></li>
+Introduction to various tools and techniques used in the field of steganalysis:
+	<ul><br>
+		<li><ins>Histogram Analysis</ins></li>
+		<ul>
+			<li>Understand how analyzing the histogram of a carrier file can reveal inconsistencies indicative of steganography.
+			</li><br>
+		</ul>
+		<li><ins>Chi-Square Analysis</ins></li>
+		<ul>
+			<li> Learn about this statistical technique and how it can be used to detect hidden data.
+			</li><br>
+		</ul>
+		<li><ins>Machine Learning</ins></li>
+		<ul>
+			<li>Explore the emerging role of machine learning in automated steganalysis.
+			</li>
+		</ul>
+	</ul>
 
-<h2>Conclusion</h2>
+ 
+ <li><h4><ins>Challenges in Steganalysis</ins></h4></li>
+<ul>
+		<li>Understand the inherent challenges in steganalysis, like the high false positive rates, the variety of steganographic techniques, and the evolution of steganographic algorithms to resist detection.</li>
+	</ul>
 
-Network troubleshooting is as much an art as it is a science. With a solid understanding of network fundamentals, mastery of diagnostic tools, a systematic approach, and a proactive mindset, you'll be well-equipped to tackle any network challenge that comes your way. Remember, in the world of networks, knowledge truly is power. Happy troubleshooting!
+<li><h4><ins>Practical Steganalysis</ins></h4></li>
+<ul>
+		<li>Delve into some basic practical exercises where students will employ simple steganalytic techniques to detect and attempt to extract hidden data using available steganalysis tools.</li>
+	</ul>
+<li><h4><ins>Counter-Steganography</ins></h4></li>
+<ul>
+		<li>Explore the concept of counter-steganography, the measures taken to prevent or deter steganographic communication, and understand its importance in certain security-sensitive scenarios.</li>
+	</ul>
+<li><h4><ins>Future of Steganalysis</ins></h4></li>
+<ul>
+		<li>Discuss the evolving landscape of steganalysis in combating advanced steganographic techniques and the ongoing research aimed at improving steganalytic effectiveness.</li>
+	</ul>
+
+ <h2>Practical Engagements</h2>
+ Engage in hands-on exercises to:
+ <ul><br>
+	 <li>Create steganographic images and audio files.</li><br>
+	 <li>Detect steganographic content using steganalysis tools.</li><br>
+	 <li>Understand the challenges and limitations in detecting steganographic data.</li>
+ </ul>
+
+ 
+</ul>
+
 
 
 
 <h2> Presentation</h2>
 
-
+<a href="https://docs.google.com/presentation/d/1Yeel2b4U5ZKgAxbSZK26Qej52LhuK9TZ/edit?usp=sharing&ouid=110228847857413878764&rtpof=true&sd=true">Steganography</a>
 
 
 <h2> Hands-On Labs</h2>
@@ -209,6 +238,4 @@ Network troubleshooting is as much an art as it is a science. With a solid under
 
 <h2> Additional Resources</h2>
 
-<a href="https://www.comptia.org/content/guides/a-guide-to-network-troubleshooting">A Guide to Network Troubleshooting</a> - Basic Steps, Tips and Tools. <br>
 
-<a href="https://www.techtarget.com/searchnetworking/answer/What-are-the-3-most-common-network-issues-to-troubleshoot">Most Common Network Issues </a> - Slow network speeds, weak Wi-Fi signals and damaged cabling are just some of the most common network connection issues that IT departments need to troubleshoot.
