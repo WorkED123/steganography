@@ -214,19 +214,37 @@ Introduction to various tools and techniques used in the field of steganalysis:
 		<li>Discuss the evolving landscape of steganalysis in combating advanced steganographic techniques and the ongoing research aimed at improving steganalytic effectiveness.</li>
 	</ul>
 
- <h2>Practical Engagements</h2>
- Engage in hands-on exercises to:
- <ul><br>
-	 <li>Create steganographic images and audio files.</li><br>
-	 <li>Detect steganographic content using steganalysis tools.</li><br>
-	 <li>Understand the challenges and limitations in detecting steganographic data.</li>
- </ul>
+<h2> Conclusion</h2>
+Understanding steganography is crucial in the realm of cybersecurity as it represents a sophisticated method of hiding information within seemingly innocuous media, such as images, audio, or video files. Mastery of steganography enables security professionals to both implement and detect hidden communications, which is vital for safeguarding sensitive data against unauthorized access and for uncovering covert operations by malicious actors. As digital media becomes increasingly prevalent, recognizing and countering steganographic techniques helps prevent data breaches and maintains the integrity and confidentiality of information. Additionally, expertise in steganography aids in developing more robust security protocols and strategies to protect against evolving threats in the digital landscape.
 
- 
+<h2>Definitions</h2>
+<ul>
+<li><b>Steganography:</b> The practice of concealing a message or information within another medium, such as an image or audio file, to avoid detection.<br>
+<br>
+
+<li><b>Steganalysis:</b> The process of detecting and analyzing hidden messages or data embedded within a carrier file.<br>
+<br>
+
+<li><b>Carrier File:</b> The file or medium used to hide or embed secret information through steganography.<br>
+<br>
+
+<li><b>Payload:</b> The hidden data or message embedded within a carrier file in steganography.<br>
+<br>
+
+<li><b>LSB (Least Significant Bit):</b> A common technique in steganography where data is hidden by modifying the least significant bit of each byte in the carrier file.<br>
+<br>
+
+<li><b>Cryptanalysis:</b> The study and practice of analyzing and breaking cryptographic systems to uncover hidden information or vulnerabilities.<br>
+<br>
+
+<li><b>Histogram Analysis:</b> A method used in steganalysis to examine the statistical distribution of pixel values in an image to detect anomalies that may indicate hidden data.<br>
+<br>
+
+<li><b>Digital Watermarking:</b> A technique for embedding information into digital media to verify authenticity, track ownership, or protect against unauthorized use.<br>
+<br>
+
+<li><b>Counter-Steganography:</b> Techniques used to obscure the presence of steganography by deliberately introducing noise or altering carrier files to evade detection.
 </ul>
-
-
-
 
 <h2> Presentation</h2>
 
@@ -235,7 +253,7 @@ Introduction to various tools and techniques used in the field of steganalysis:
 
 <h2> Hands-On Labs</h2>
 
-
+<h2>Games</h2>
 <h2> Additional Resources</h2>
 
 
